@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "*.rh": "cpp",
+        "type_traits": "cpp"
     }
 }

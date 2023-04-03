@@ -1,1 +1,2 @@
-Slider.o: src/Slider.cpp include/Slider.h include/DebugLogger.h
+Slider.o: src/Slider.cpp include/Slider.h include/Control.h \
+ include/DebugLogger.h

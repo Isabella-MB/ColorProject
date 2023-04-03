@@ -4,15 +4,15 @@
 #include "Button.h"
 #include "DebugLogger.h"
 #include "Slider.h"
+#include "Control.h"
 
 int main()
 {
     // Initialize the game window and other resources
-
     sf::RenderWindow window(sf::VideoMode(800, 600), "My Game");
 
     Button button(100, 50, sf::Vector2f(100, 100), sf::Color::Green);
-    Slider slider(100, 50, sf::Vector2f(100, 200), sf::Color::Red);
+    Slider slider(100, 24, sf::Vector2f(100, 200), sf::Color::Red);
 
     // Get the logger instance
     auto &logger = DebugLogger::getInstance();

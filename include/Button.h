@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "DebugLogger.h"
+#include "Control.h"
 
 class Button : public Control
 {

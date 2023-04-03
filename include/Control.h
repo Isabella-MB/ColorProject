@@ -8,7 +8,6 @@
 class Control
 {
 public:
-    Control(float width, float height, sf::Vector2f position, sf::Color color);
     virtual ~Control() = default;
 
     virtual void handleEvent(const sf::Event& event) = 0;
