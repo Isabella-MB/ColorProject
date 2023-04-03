@@ -13,4 +13,5 @@ public:
 
 private:
 	sf::RectangleShape m_button;
+	std::function<void()> m_callback;
 };

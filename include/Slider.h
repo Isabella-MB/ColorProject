@@ -21,10 +21,6 @@ private:
     float m_min = 0.0f;
     float m_max = 1.0f;
 
-    float m_width;
-    float m_height;
-    sf::Vector2f m_position;
-    sf::Color m_color;
     sf::RectangleShape m_handle;
     sf::RectangleShape m_slider;
 };

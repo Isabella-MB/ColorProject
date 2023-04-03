@@ -2,6 +2,15 @@
     "files.associations": {
         "cmath": "cpp",
         "*.rh": "cpp",
-        "type_traits": "cpp"
-    }
+        "type_traits": "cpp",
+        "vector": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/isabella/Projects/C++/RPG/bin",
+            "binaryPath": "/home/isabella/Projects/C++/RPG/bin/my_program",
+            "binaryArgs": []
+        }
+    ]
 }

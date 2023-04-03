@@ -1,16 +1,15 @@
 #include "Slider.h"
 
-Slider::Slider(float width, float height, sf::Vector2f position, sf::Color color)
-    : m_width(width)
-    , m_height(height)
-    , m_position(position)
-    , m_color(color)
+Slider::Slider(float width, float height, sf::Vector2f position, sf::Color color) 
+    : Control(width, height, position, color)
 {
     m_slider.setSize(sf::Vector2f(m_width, m_height));
     m_slider.setPosition(m_position);
     m_slider.setFillColor(m_color);
 
-    m_handle.setSize(sf::Vector2f(m_width / 10, m_height));
+    m_handle.setSize(sf::Vector2f(1, m_height));
+    m_handle.setPosition(m_position);
+    m_handle.setFillColor(sf::Color::White);
 }
 
 void Slider::handleEvent(const sf::Event& event)
@@ -26,18 +25,16 @@ void Slider::handleEvent(const sf::Event& event)
         m_dragging = false;
         DebugLogger::getInstance().log("slider was released");
     }
-    // TODO: Account for the extents of the slider handle rect
     if (m_dragging && event.type == sf::Event::MouseMoved)
     {
         float x = event.mouseMove.x;
-        float extent = m_handle.getSize().x / 2;
-        if (x < m_position.x - extent)
+        if (x < m_position.x)
         {
-            x = m_position.x - extent;
+            x = m_position.x;
         }
-        else if (x > m_position.x + m_width - extent)
+        else if (x > m_position.x + m_width)
         {
-            x = m_position.x + m_width - extent;
+            x = m_position.x + m_width;
         }
         m_handle.setPosition(x, m_position.y);
     }
