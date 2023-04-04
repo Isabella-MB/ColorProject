@@ -5,7 +5,7 @@
 #include "DebugLogger.h"
 
 Button::Button(float width, float height, sf::Vector2f position, sf::Color color)
-: Control(width, height, position, color)
+: Control(width, height, position), m_color(color)
 {
     // Set the button properties
     m_button.setSize(sf::Vector2f(width, height));

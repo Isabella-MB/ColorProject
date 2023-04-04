@@ -3,6 +3,7 @@
 #include "DebugLogger.h"
 #include "Control.h"
 
+/// @brief A button control that can be used to trigger an action
 class Button : public Control
 {
 public:
@@ -12,6 +13,8 @@ public:
 	void draw(sf::RenderWindow &window);
 
 private:
+
+	sf::Color m_color;
 	sf::RectangleShape m_button;
 	std::function<void()> m_callback;
 };

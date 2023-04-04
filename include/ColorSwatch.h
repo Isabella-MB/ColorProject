@@ -5,6 +5,7 @@
 #include "Button.h"
 #include "DebugLogger.h"
 
+/// @brief A color swatch that represents a color in a color picker
 class ColorSwatch : public Control
 {
 public:
@@ -13,10 +14,11 @@ public:
 
     void handleEvent(const sf::Event& event);
     void draw(sf::RenderWindow& window);
-    
+
+    void setColor(sf::Color color) { m_color = color; m_swatch.setFillColor(m_color); }
     sf::Color getColor() const { return m_color; }
 
 private:
+    sf::Color m_color;
     sf::RectangleShape m_swatch;
-    Button* m_button;
 };
