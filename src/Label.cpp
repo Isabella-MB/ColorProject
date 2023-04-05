@@ -1,4 +1,4 @@
-#include "Label.h"
+#include "Label.hpp"
 
 Label::Label(float width, float height, sf::Vector2f position, sf::Color color, std::string text, sf::Font& font, unsigned int fontSize)
 : Control(width, height, position), m_font(font)

@@ -3,8 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-#include "Button.h"
-#include "DebugLogger.h"
+#include "Button.hpp"
+#include "DebugLogger.hpp"
 
 
 class Label : public Control

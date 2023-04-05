@@ -1,2 +1,5 @@
-Label.o: src/Label.cpp include/Label.h include/Button.h \
- include/DebugLogger.h include/Control.h
+-Wall
+-Wextra
+-O2
+-MM
+src/Label.cpp

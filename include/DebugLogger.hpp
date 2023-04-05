@@ -68,7 +68,7 @@ private:
     // Private constructor to prevent multiple instances
     DebugLogger()
     {
-        m_font.loadFromFile("arial.ttf");
+        m_font.loadFromFile("fonts/arial.ttf");
     }
 
     // Private copy constructor and assignment operator to prevent copying

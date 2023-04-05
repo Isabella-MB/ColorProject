@@ -1,17 +1,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-#include "Button.h"
-#include "DebugLogger.h"
-#include "Slider.h"
-#include "Control.h"
-#include "ColorPicker.h"
+#include "Button.hpp"
+#include "DebugLogger.hpp"
+#include "Slider.hpp"
+#include "Control.hpp"
+#include "ColorPicker.hpp"
 
 int main()
 {
     // Initialize the game window and other resources
     sf::RenderWindow window(sf::VideoMode(800, 600), "My Game");
-
+    
     Button button(100, 50, sf::Vector2f(100, 100), sf::Color::Green);
     
     ColorPicker colorPicker(200, 200, sf::Vector2f(100, 200), sf::Color(50, 50, 50, 255));

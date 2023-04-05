@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <vector>
-#include "DebugLogger.h"
+#include "DebugLogger.hpp"
 
 class Control
 {

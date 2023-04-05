@@ -2,14 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <vector>
-#include "DebugLogger.h"
-#include "Slider.h"
-#include "ColorSwatch.h"
-#include "Theme.h"
-#include "Label.h"
-
-#include <iomanip>
 #include <sstream>
+#include <iomanip>
+#include "DebugLogger.hpp"
+#include "Slider.hpp"
+#include "ColorSwatch.hpp"
+#include "Theme.hpp"
+#include "Label.hpp"
+#include "Spectrum.hpp"
 
 /// @brief A color picker control that can be used to select a color
 class ColorPicker : public Control
@@ -25,6 +25,8 @@ public:
 
 protected:
     sf::RectangleShape m_colorPicker;
+
+    Spectrum* m_spectrum;
 
     ColorSwatch* m_primarySwatch;
     ColorSwatch* m_secondarySwatch;

@@ -2,8 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-#include "Button.h"
-#include "DebugLogger.h"
+#include "Button.hpp"
+#include "DebugLogger.hpp"
 
 /// @brief A color swatch that represents a color in a color picker
 class ColorSwatch : public Control

@@ -1,10 +1,14 @@
-#include "ColorPicker.h"
+#include "ColorPicker.hpp"
 
 ColorPicker::ColorPicker(float width, float height, sf::Vector2f position, sf::Color color) : Control(width, height, position)
 {
     m_colorPicker.setSize(sf::Vector2f(m_width, m_height));
     m_colorPicker.setPosition(m_position);
     m_colorPicker.setFillColor(color);
+
+    // Create the spectrum in the middle of the color picker
+    m_spectrum = new Spectrum(m_width / 4, m_height, sf::Vector2f(m_position.x + m_width / 4, m_position.y), sf::Color::White);
+    // m_spectrum = new Spectrum(m_width / 4, m_height, sf::Vector2f(m_position.x + m_width - m_width / 4, m_position.y), sf::Color::White);
 
     m_primarySwatch = new ColorSwatch(m_width / 4, m_height / 4, sf::Vector2f(m_position.x, m_position.y), sf::Color::White);
     m_secondarySwatch = new ColorSwatch(m_width / 4, m_height / 4, sf::Vector2f(m_position.x + m_width - m_width / 4, m_position.y), sf::Color::Black);
@@ -24,6 +28,11 @@ ColorPicker::ColorPicker(float width, float height, sf::Vector2f position, sf::C
 
 ColorPicker::~ColorPicker()
 {
+    delete m_spectrum;
+
+    delete m_primarySwatchLabel;
+    delete m_secondarySwatchLabel;
+    
     delete m_primarySwatch;
     delete m_secondarySwatch;
 
@@ -61,12 +70,6 @@ void ColorPicker::handleEvent(const sf::Event &event)
     m_alphaSlider->handleEvent(event);
 
     auto color = sf::Color(m_redSlider->getValue(), m_greenSlider->getValue(), m_blueSlider->getValue(), m_alphaSlider->getValue());
-
-    if (event.type != sf::Event::MouseMoved)
-    {
-        return;
-    }
-
     if (m_redSlider->isDragging() || m_greenSlider->isDragging() || m_blueSlider->isDragging() || m_alphaSlider->isDragging())
     {
         m_primarySwatch->setColor(color);
@@ -77,6 +80,8 @@ void ColorPicker::handleEvent(const sf::Event &event)
 void ColorPicker::draw(sf::RenderWindow &window)
 {
     window.draw(m_colorPicker);
+
+    m_spectrum->draw(window);
 
     m_primarySwatchLabel->draw(window);
     m_secondarySwatchLabel->draw(window);

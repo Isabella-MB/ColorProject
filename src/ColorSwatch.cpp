@@ -1,4 +1,4 @@
-#include "ColorSwatch.h"
+#include "ColorSwatch.hpp"
 
 ColorSwatch::ColorSwatch(float width, float height, sf::Vector2f position, sf::Color color)
 : Control(width, height, position)

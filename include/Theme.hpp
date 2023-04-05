@@ -4,7 +4,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
-
 class Theme
 {
     public:
@@ -20,7 +19,7 @@ class Theme
         sf::Font& getFont() { return font; }
 
     private:
-        Theme() { font.loadFromFile("arial.ttf"); }
+        Theme() { font.loadFromFile("fonts/arial.ttf"); }
 
         sf::Font font;
 };

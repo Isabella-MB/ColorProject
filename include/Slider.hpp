@@ -2,14 +2,15 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <vector>
-#include "Control.h"
-#include "DebugLogger.h"
+#include "Control.hpp"
+#include "DebugLogger.hpp"
+#include "ImageUtils.hpp"
 
 class Slider : public Control
 {
 public:
     Slider(float width, float height, sf::Vector2f position, sf::Color start_color, sf::Color end_color);
-    ~Slider() = default;
+    ~Slider();
 
     void handleEvent(const sf::Event& event);
     void draw(sf::RenderWindow& window);
@@ -26,6 +27,8 @@ private:
     bool m_dragging = false;
 
     sf::Uint8 m_value = 0;
+
+    sf::Shader* m_shader;
 
     sf::RectangleShape m_handle;
     sf::RectangleShape m_slider;

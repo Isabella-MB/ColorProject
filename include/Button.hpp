@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "DebugLogger.h"
-#include "Control.h"
+#include "DebugLogger.hpp"
+#include "Control.hpp"
 
 /// @brief A button control that can be used to trigger an action
 class Button : public Control

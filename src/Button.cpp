@@ -1,8 +1,7 @@
 // Button.cpp
-#include "Button.h"
+#include "Button.hpp"
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-#include "DebugLogger.h"
 
 Button::Button(float width, float height, sf::Vector2f position, sf::Color color)
 : Control(width, height, position), m_color(color)
